@@ -1,13 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"o_player",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"o_floor_test_ver",
+  "eventList":[],
   "managed":true,
-  "name":"o_player",
+  "name":"o_floor_test_ver",
   "overriddenProperties":[],
   "parent":{
     "name":"Let's go",
@@ -32,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"s_player",
-    "path":"sprites/s_player/s_player.yy",
+    "name":"s_for_test",
+    "path":"sprites/s_for_test/s_for_test.yy",
   },
   "spriteMaskId":null,
   "visible":true,

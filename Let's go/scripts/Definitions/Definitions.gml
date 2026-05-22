@@ -1,0 +1,5 @@
+enum STATE {
+	NORMAL,
+	FREEZE_TIME,
+}
+

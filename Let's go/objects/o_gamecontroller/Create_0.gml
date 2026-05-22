@@ -1,0 +1,1 @@
+global.walls = [o_floor_test_ver];//벽 그룹
