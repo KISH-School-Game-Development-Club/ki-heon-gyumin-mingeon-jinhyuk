@@ -22,6 +22,7 @@
     {"id":{"name":"필독","path":"notes/필독/필독.yy",},},
     {"id":{"name":"o_player","path":"objects/o_player/o_player.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"s_player","path":"sprites/s_player/s_player.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
