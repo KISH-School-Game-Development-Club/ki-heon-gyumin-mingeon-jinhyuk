@@ -4,4 +4,7 @@ grav = 0.8
 jumpheight = 25
 hsp = 0
 jump_save = 0
+dashcool = 0
+dashspeed = 40
+dashdir = 1
 state = STATE.NORMAL;

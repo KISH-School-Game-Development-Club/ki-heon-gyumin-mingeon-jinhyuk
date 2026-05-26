@@ -1,1 +1,1 @@
-global.walls = [o_floor_test_ver];//벽 그룹
+//global.walls = [o_floor_test_ver, o_wall_for_walljump];//벽 그룹
