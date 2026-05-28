@@ -3,4 +3,5 @@ enum STATE {
 	FREEZE_TIME,
 }
 
-global.walls = [o_wall_for_walljump, o_floor_test_ver];//벽 그룹
+global.mainwalls = [o_wall, o_floor_test_ver, o_wall2];//벽 그룹
+global.dashwalls = [o_wall, o_floor_test_ver];//통과 불가 벽 그룹

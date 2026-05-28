@@ -1,3 +1,4 @@
+test = 0
 movespeed = 15
 speedy = 0
 grav = 0.8
