@@ -1,12 +1,12 @@
 {
   "$GMObject":"",
-  "%Name":"o_gamecontroller",
+  "%Name":"o_enemy2",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"o_gamecontroller",
+  "name":"o_enemy2",
   "overriddenProperties":[],
   "parent":{
     "name":"Let's go",
@@ -30,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"s_enemy2",
+    "path":"sprites/s_enemy2/s_enemy2.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

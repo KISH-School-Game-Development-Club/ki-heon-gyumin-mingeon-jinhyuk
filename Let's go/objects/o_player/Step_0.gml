@@ -35,6 +35,10 @@ if (dashcool > 0) {	//대시 코드
 	}
 	dashspeed *= 0.85
 	if (abs(dashspeed) < 1) {
+		if (place_meeting(x , y, global.mainwalls) && !place_meeting(x, y, global.dashwalls)){
+			test = 1
+			x +=dashdir*10
+		}
 		dashcool = 0
 		dashspeed = 0
 	}
