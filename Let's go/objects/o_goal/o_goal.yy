@@ -1,16 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"o_gamecontroller",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"o_goal",
+  "eventList":[],
   "managed":true,
-  "name":"o_gamecontroller",
+  "name":"o_goal",
   "overriddenProperties":[],
   "parent":{
-    "name":"others",
-    "path":"folders/others.yy",
+    "name":"Let's go",
+    "path":"Let's go.yyp",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -30,7 +27,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"s_goal",
+    "path":"sprites/s_goal/s_goal.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

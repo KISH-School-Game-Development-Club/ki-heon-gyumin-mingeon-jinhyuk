@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"Definitions",
   "parent":{
-    "name":"Let's go",
-    "path":"Let's go.yyp",
+    "name":"others",
+    "path":"folders/others.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

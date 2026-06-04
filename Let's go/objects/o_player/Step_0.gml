@@ -1,4 +1,6 @@
 dashcool--
+hookcool --
+timenodeath --
 if dashcool <= 0{	//대시 끝나면 대시 스피드 초기화
 	dashspeed = 40
 }
@@ -63,6 +65,27 @@ speedy -= jumpheight;
 jump_save = 0
 } 
 //---------------------
+if place_meeting(x, y, global.damage) && timenodeath <= 0 && dashcool <= 0{	//피격 코드
+	HP -= 1
+	timenodeath = 60
+}
+if (timenodeath > 0) {	//무적시 깜빡이는 효과
+    if (timenodeath % 20 < 10) {
+        image_alpha = 0.1
+    } else {
+        image_alpha = 1
+    }
+}else{
+    image_alpha = 1
+}
+
+
+//--------------------
 if (keyboard_check_pressed(ord("E")) && dashcool <= 0){	//대시 버튼
 	dashcool = 10
+}
+if (keyboard_check_pressed(ord("Q")) && hookcool <= 0){	//후크 버튼
+	hookdur = 10
+}else if (keyboard_check_pressed(ord("Q")) && hookcool > 0 && hookdur <= 0){
+	hooksp = 30
 }

@@ -1,4 +1,6 @@
 test = 0
+HP = 20
+timenodeath = 0
 movespeed = 15
 speedy = 0
 grav = 0.8
@@ -8,4 +10,7 @@ jump_save = 0
 dashcool = 0
 dashspeed = 40
 dashdir = 1
+hookcool = 0
+hookdur = 0
+hooksp = 0
 state = STATE.NORMAL;
