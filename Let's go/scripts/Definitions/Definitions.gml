@@ -5,7 +5,7 @@ enum STATE {
 
 global.mainwalls = [o_wall, o_floor_test_ver, o_wall2];//벽 그룹
 global.dashwalls = [o_wall, o_floor_test_ver];//통과 불가 벽 그룹
-global.damage = [o_enemy, o_enemy2, o_trigger_spike1];
+global.damage = [op_enemy, o_enemy2, o_trigger_spike1];
 
 function enemyAI (moverange, movesp, view_range, attack_range){
 	if (!variable_instance_exists(id, "state")){	//변수 정리

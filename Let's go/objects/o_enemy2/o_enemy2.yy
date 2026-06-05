@@ -2,8 +2,8 @@
   "$GMObject":"",
   "%Name":"o_enemy2",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"o_enemy2",
@@ -12,7 +12,10 @@
     "name":"Let's go",
     "path":"Let's go.yyp",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"op_enemy",
+    "path":"objects/op_enemy/op_enemy.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
