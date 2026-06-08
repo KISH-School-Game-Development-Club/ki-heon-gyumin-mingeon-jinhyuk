@@ -1,9 +1,9 @@
 
-
 enum EnemyState {
 		PATROL,
 		CHASE,
-		ATTACK
+		ATTACK,
+		STUN
 	}
 image_index = 0
 image_speed = 0

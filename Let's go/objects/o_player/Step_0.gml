@@ -1,5 +1,6 @@
-dashcool--
-hookcool --
+dashcool --
+scool --
+sdur --
 timenodeath --
 if dashcool <= 0{	//대시 끝나면 대시 스피드 초기화
 	dashspeed = 40
@@ -8,6 +9,7 @@ if (jump_save > 0){	//점프 디버깅
 jump_save --
 }
 //이동 코드
+if (sdur <= 0){
 if (dashcool <= 0){
 key_right = keyboard_check(ord("D"));
 key_left = keyboard_check(ord("A"));
@@ -45,6 +47,7 @@ if (dashcool > 0) {	//대시 코드
 		dashspeed = 0
 	}
 }
+}
 	
 //----------------------
 
@@ -57,8 +60,10 @@ speedy = 0
 }
 y += speedy
 speedy += grav
+if(sdur <= 0){
 if (keyboard_check_pressed(vk_space)) {	//점프 코드
 jump_save = 7	
+}
 }
 if (jump_save > 0  && place_meeting(x, y+1, global.mainwalls)) {	//점프 디버깅
 speedy -= jumpheight;
@@ -78,14 +83,12 @@ if (timenodeath > 0) {	//무적시 깜빡이는 효과
 }else{
     image_alpha = 1
 }
-
-
 //--------------------
-if (keyboard_check_pressed(ord("E")) && dashcool <= 0){	//대시 버튼
+
+if (keyboard_check_pressed(ord("E")) && dashcool <= 0 && sdur <= 0){	//대시 버튼
 	dashcool = 10
 }
-if (keyboard_check_pressed(ord("Q")) && hookcool <= 0){	//후크 버튼
-	hookdur = 10
-}else if (keyboard_check_pressed(ord("Q")) && hookcool > 0 && hookdur <= 0){
-	hooksp = 30
+if (keyboard_check_pressed(ord("Q")) && scool <= 0){	//실드 버튼
+	sdur = 120
+	scool = 300
 }
