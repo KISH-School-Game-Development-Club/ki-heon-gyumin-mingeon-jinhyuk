@@ -6,10 +6,10 @@ enum nothing {
 }
 
 global.mainwalls = [o_wall, o_floor_test_ver, o_wall2];//벽 그룹
-global.dashwalls = [o_wall, o_floor_test_ver];//통과 불가 벽 그룹
-global.damage = [op_enemy, o_enemy2, o_trigger_spike1, o_bullet];
+global.dashwalls = [o_wall, o_floor_test_ver, o_onoffwall, o_onoffwall_opposie];//통과 불가 벽 그룹
+global.damage = [o_trigger_spike1, o_bullet, o_bullet_2, o_bulletenemy];
 
-function enemyAI (moverange, movesp, view_range, attack_range, enemyhp){
+function enemyAI (moverange, movesp, view_range, attack_range, enemyhp, enemyid){
 	if (!variable_instance_exists(id, "state")){	//변수 정리
 		startpoint = x
 		enemy_hp = enemyhp
@@ -25,8 +25,8 @@ function enemyAI (moverange, movesp, view_range, attack_range, enemyhp){
 	}
 	if (!instance_exists(o_player)) return;	//플레이어가 없을 시 행동 X
 	if (attackcool > 0) attackcool--;	//공격 쿨 감소
-	dist = point_distance(x, y, o_player.x, o_player.y)
-	See_player = false
+	var dist = point_distance(x, y, o_player.x, o_player.y)
+	var See_player = false
 	if (dist <= view_range){	//시야에 감지될시 추적
 		if (state == EnemyState.CHASE || sign(o_player.x - x) == movedir){
 			if (!collision_line(x, y, o_player.x, o_player.y, global.mainwalls, false, true)){
@@ -103,18 +103,39 @@ function enemyAI (moverange, movesp, view_range, attack_range, enemyhp){
 		break
 
 		case EnemyState.ATTACK:
+		if enemyid == 1{	//일반 몹
 			image_index = 1
 			if (attacktimer == 40){
 				if (x < o_player.x){
 					movedir = 1
 				}else{
-					 movedir = -1
+					movedir = -1
 				} 
 			}
 			if (attacktimer > 30){
 				move_x = -movedir * 2// 뒤로 물러남
-			} else if (attacktimer < 10){		
+			} else if (attacktimer < 10){
+				if (array_get_index(global.damage, id) == -1) {
+					array_push(global.damage, id);
+				}
 				move_x = movedir * 32// 돌진
+			} else if(attacktimer < 0){
+				if(array_get_index(global.damage, id) != -1){
+					array_delete(global.damage, id, 1);
+				}
+			}
+		}else if enemyid == 2{	//마법사 몹
+				if (x < o_player.x){
+					movedir = 1
+				}else{
+					 movedir = -1
+				} 
+			if (attacktimer > 15){
+				move_x = -movedir * 12// 뒤로 물러남
+			}else if (attacktimer <= 1){
+			var _bullet = instance_create_layer(x, y, "enemy", o_bulletenemy);
+			_bullet.my_dir = movedir; 
+			}
 			}
 			attacktimer--;
 			if (attacktimer <= 0){
@@ -163,3 +184,5 @@ function enemyAI (moverange, movesp, view_range, attack_range, enemyhp){
 		}
 }
 }
+	
+	

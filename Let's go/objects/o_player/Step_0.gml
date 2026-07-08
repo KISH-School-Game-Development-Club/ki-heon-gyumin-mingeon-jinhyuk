@@ -10,7 +10,7 @@ jump_save --
 }
 //이동 코드
 if (sdur <= 0){
-if (dashcool <= 0){
+if (dashcool <= 20){
 key_right = keyboard_check(ord("D"));
 key_left = keyboard_check(ord("A"));
 if key_right{	//대시 방향 정하기
@@ -27,7 +27,7 @@ hsp = 0
 }
 x += hsp
 }
-if (dashcool > 0) {	//대시 코드
+if (dashcool > 20) {	//대시 코드
 	repeat(abs(round(dashspeed))) {
 		if (!place_meeting(x + dashdir, y, global.dashwalls)) {
 			x += dashdir
@@ -70,7 +70,7 @@ speedy -= jumpheight;
 jump_save = 0
 } 
 //---------------------
-if place_meeting(x, y, global.damage) && timenodeath <= 0 && dashcool <= 0{	//피격 코드
+if place_meeting(x, y, global.damage) && timenodeath <= 0 && dashcool <= 0 && sdur <= 0{	//피격 코드
 	HP -= 1
 	timenodeath = 60
 }
@@ -86,9 +86,14 @@ if (timenodeath > 0) {	//무적시 깜빡이는 효과
 //--------------------
 
 if (keyboard_check_pressed(ord("E")) && dashcool <= 0 && sdur <= 0){	//대시 버튼
-	dashcool = 10
+	dashcool = 30
 }
 if (keyboard_check_pressed(ord("Q")) && scool <= 0){	//실드 버튼
-	sdur = 120
+	sdur = 60
 	scool = 300
 }
+
+if (keyboard_check_pressed(ord("N"))){
+	room_goto_next()
+}
+

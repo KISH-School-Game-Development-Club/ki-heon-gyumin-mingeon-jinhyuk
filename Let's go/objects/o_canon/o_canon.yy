@@ -12,7 +12,10 @@
     "name":"Let's go",
     "path":"Let's go.yyp",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"op_canon",
+    "path":"objects/op_canon/op_canon.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

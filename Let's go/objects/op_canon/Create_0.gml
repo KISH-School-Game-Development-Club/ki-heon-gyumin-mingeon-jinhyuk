@@ -1,0 +1,16 @@
+shootcool = 120
+reshootcool = 120
+dir = 1
+which_bullet = o_bullet
+if (image_xscale == 1){
+	if(direction == 90){
+		dir = 2
+	}else if(direction == -90){
+		dir = -2
+	}else{
+		dir = 1
+	}
+}else if (image_xscale == -1){
+		dir = -1
+	}
+	

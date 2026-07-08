@@ -9,6 +9,6 @@ speedy = 0
 y += speedy
 speedy += grav
 //x축 이동 코드
-enemyAI(600, 3, 750, 200, 5)
+enemyAI(600, 3, 750, 200, 5, 1)
 o_player.test = x + move_x
 timenodeath_enemy--
