@@ -8,6 +8,7 @@ enum nothing {
 global.mainwalls = [o_wall, o_floor_test_ver, o_wall2];//벽 그룹
 global.dashwalls = [o_wall, o_floor_test_ver, o_onoffwall, o_onoffwall_opposie];//통과 불가 벽 그룹
 global.damage = [o_trigger_spike1, o_bullet, o_bullet_2, o_bulletenemy];
+global.paused = false; //일시정지
 
 function enemyAI (moverange, movesp, view_range, attack_range, enemyhp, enemyid){
 	if (!variable_instance_exists(id, "state")){	//변수 정리
@@ -114,14 +115,15 @@ function enemyAI (moverange, movesp, view_range, attack_range, enemyhp, enemyid)
 			}
 			if (attacktimer > 30){
 				move_x = -movedir * 2// 뒤로 물러남
-			} else if (attacktimer < 10){
+			} else if (attacktimer < 10 && 0 < attacktimer){
 				if (array_get_index(global.damage, id) == -1) {
 					array_push(global.damage, id);
 				}
 				move_x = movedir * 32// 돌진
-			} else if(attacktimer < 0){
+			} else if(attacktimer <= 0){
 				if(array_get_index(global.damage, id) != -1){
-					array_delete(global.damage, id, 1);
+					var _index = array_get_index(global.damage, id);
+					array_delete(global.damage, _index, 1);
 				}
 			}
 		}else if enemyid == 2{	//마법사 몹
@@ -138,7 +140,7 @@ function enemyAI (moverange, movesp, view_range, attack_range, enemyhp, enemyid)
 			}
 			}
 			attacktimer--;
-			if (attacktimer <= 0){
+			if (attacktimer <= 0 && array_get_index(global.damage, id) == -1){
 				if (stunning == 0){
 				state = EnemyState.CHASE
 				attacktimer = 0

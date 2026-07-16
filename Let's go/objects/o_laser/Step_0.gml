@@ -1,3 +1,4 @@
+if (global.paused) exit;
 //레이저 끝점 계산
 var current_length = 0;
  var hit_wall = false;

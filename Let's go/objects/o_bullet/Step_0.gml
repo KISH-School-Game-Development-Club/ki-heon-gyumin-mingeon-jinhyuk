@@ -1,3 +1,4 @@
+if (global.paused) exit;
 if(!place_meeting(x, y, global.mainwalls)){
 	switch(op_canon.dir){
 		case 1:
