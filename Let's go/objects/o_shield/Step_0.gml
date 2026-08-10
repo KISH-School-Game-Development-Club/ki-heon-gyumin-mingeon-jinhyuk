@@ -9,12 +9,12 @@ if(o_player.sdur > 0){
 	mask_index = -4
 }
 if (o_shield.visible == true) {
-    if (array_get_index(global.mainwalls, o_shield) == -1) {
-        array_push(global.mainwalls, o_shield);
+    if (array_get_index(global.ppwalls, o_shield) == -1) {
+        array_push(global.ppwalls, o_shield);
     }
 }else{
-    var _index = array_get_index(global.mainwalls, o_shield);
+    var _index = array_get_index(global.ppwalls, o_shield);
     if (_index != -1) {
-        array_delete(global.mainwalls, _index, 1);
+        array_delete(global.ppwalls, _index, 1);
     }
 }

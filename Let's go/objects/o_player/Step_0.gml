@@ -111,7 +111,7 @@ if (jump_save > 0) { //점프 디버깅
 } 
 //---------------------
 if place_meeting(x, y, global.damage) && timenodeath <= 0 && dashcool <= 0 && sdur <= 0{	//피격 코드
-	HP -= 1
+	global.player_hp -= 1
 	timenodeath = 60
 }
 if (timenodeath > 0) {	//무적시 깜빡이는 효과
@@ -134,6 +134,10 @@ if (keyboard_check_pressed(ord("Q")) && scool <= 0){	//실드 버튼
 }
 
 if (keyboard_check_pressed(ord("N"))){
+	if(room = Room2){
+		room_goto(Room3)
+	}else{
 	room_goto_next()
+}
 }
 

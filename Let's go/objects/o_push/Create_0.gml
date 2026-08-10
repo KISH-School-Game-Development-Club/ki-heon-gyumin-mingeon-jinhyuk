@@ -1,1 +1,3 @@
-image_speed = 0
+ssimage_speed = 0
+used = -1
+timer = 1

@@ -1,7 +1,7 @@
 if (global.paused) exit;
-if (normalhp != o_player.HP){	//플레이어 피격 확인
+if (normalhp != global.player_hp){	//플레이어 피격 확인
 	hit = 1;
-	normalhp = o_player.HP;
+	normalhp = global.player_hp;
 }
 if(hit == 1){	//0.5동안 보이기
 	if (image_alpha < 1){

@@ -1,5 +1,6 @@
+//global.player_data: gamecontroller_first에 있음
+
 test = 0 //테스트용
-HP = 10 //체력
 timenodeath = 0 //무적 시간
 movespeed = 15 //이동속도
 speedy = 0 //중력코드 변수
